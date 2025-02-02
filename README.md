@@ -1,4 +1,6 @@
-The codebase structure is as follows:
+## Usage
+
+The structure is as follows:
 ```
 mcp-server-redis/
 ├── src/
@@ -27,7 +29,13 @@ To use this server, you'll need to:
 
 Install the required dependencies:
 
-`uv add redis "mcp[cli]"`
+[If not already installed] https://docs.astral.sh/uv/
+
+`uv venv`
+
+`source .venv/bin/activate`
+
+`uv sync`
 
 Refer to the .env.example file to configure your Redis connection by adding the appropriate variables.
 
@@ -35,15 +43,15 @@ Run the server:
 
 `python src/server.py`
 
-This server implements:
+## Capabilities of this server
 
-Resources:
+**Resources:**
 
 - redis://status - Current connection status
 - redis://info - Redis server information
 - redis://keys/{pattern} - List keys matching a pattern
 
-Tools:
+**Tools:**
 
 - Basic operations:
     - get_value - Get a value
@@ -68,10 +76,11 @@ Each tool includes error handling and returns meaningful responses. The server w
 
 You can test it with the MCP Inspector:
 `mcp dev src/server.py`
+
 Or install it in Claude Desktop:
 `mcp install src/server.py`
 
-Example usage:
+## Example
 ```
 User: What's the current Redis connection status?
 LLM: Let me check the Redis connection status for you.
@@ -96,4 +105,6 @@ Alice
 
 Yes, I can confirm that your name "Alice" was successfully stored in Redis and can be retrieved correctly. The value matches exactly what we stored.
 ```
+
+## 
 This implementation provides a solid foundation for Redis integration through MCP. You can extend it further by adding more Redis commands as needed for your specific use case.
