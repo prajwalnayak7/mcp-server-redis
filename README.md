@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/prajwalnayak7-mcp-server-redis-badge.png)](https://mseep.ai/app/prajwalnayak7-mcp-server-redis)
+
 ## Usage
 
 The structure is as follows:
